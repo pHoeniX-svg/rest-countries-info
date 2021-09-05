@@ -1,0 +1,15 @@
+// @charset "utf-8";
+@use "abstracts";
+@use "base";
+@use "components";
+@use "layout";
+@use "pages";
+@use 'utilities';
+
+/*! DON'T REMOVE!!!: Forces the utf-8 declaration above as default charset in the CSS
+*/
+.force-UTF-8 {
+  content: '▶';
+}
+
+/*!  Force output of above line by adding a unicode character. ♫ */

@@ -1,0 +1,33 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/type" as *;
+@use '../abstracts/media-query' as *;
+/*!Theme Name: 
+Theme URI: https://phoenix-svg.github.io/FEM__countries-info/
+Repository: https://github.com/pHoeniX-svg/FEM__countries-info
+Description: A project which gives retrieves country data and displays it to the users
+Author's Name: Chukwuzube Samuel
+Author's Moniker: pHoeniX-svg
+Version: 01
+*/
+:root {
+  // outputs the theme colors as css variables
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+  --clr-success: hsl(134, 61%, 41%);
+  --clr-danger: hsl(354, 70%, 54%);
+
+  // outputs the font-sizes as css custom variables
+  @each $screensize, $font-size in $font-sizes {
+    @each $size, $value in $font-size {
+      --fs-#{$size}: #{$value};
+    }
+  }
+  --ff-primary: 'Nunito Sans', sans-serif;
+  --fnt-lt: 300;
+  --fnt-md: 600;
+  --fnt-bld: 800;
+  --shadow-300: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,7 @@
+@use "../abstracts/mixins" as *;
+.u-center-abs {
+  @include center-abs('both');
+}
+.u-col {
+  width: 100%;
+}

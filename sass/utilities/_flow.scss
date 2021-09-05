@@ -1,0 +1,9 @@
+/* ////////////////////////////////////////////
+// UTILITIES: FLOW
+*/
+.u-flow {
+  --flow-space: 1em;
+}
+.u-flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
