@@ -2,6 +2,10 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 
 const basicStyles = css`
   :root {
+    color-scheme: light dark;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+
     /* colors */
     --clr-600: 209, 23%, 22%;
     --clr-500: 207, 26%, 17%;
@@ -21,16 +25,31 @@ const basicStyles = css`
     --fs-200: 1.2rem;
     --fs-100: 1rem;
 
+    --fw-800: 700;
     --fw-700: 700;
     --fw-600: 600;
     --fw-500: 500;
     --fw-400: 400;
     --fw-300: 300;
 
-    --ff-primary: 'Open Sans', sans-serif;
-    --ff-accent: 'Raleway', sans-serif;
+    --ff-primary: 'Nunito Sans', sans-serif;
 
-    --max-width: 120rem;
+    --max-width: 128rem;
+  }
+
+  // mitigates the flashing of styles on DOM paint
+  [color-scheme='dark'] {
+    --clr-primary: hsl(var(--clr-100));
+    --clr-accent: hsl(var(--clr-200));
+    --bg-primary: hsl(var(--clr-500));
+    --bg-accent: hsl(var(--clr-600));
+  }
+
+  [color-scheme='light'] {
+    --clr-primary: hsl(var(--clr-400));
+    --clr-accent: hsl(var(--clr-300));
+    --bg-primary: hsl(var(--clr-200));
+    --bg-accent: hsl(var(--clr-100));
   }
 
   /* Set core root defaults */
@@ -61,11 +80,63 @@ const basicStyles = css`
     box-sizing: inherit;
   }
 
+  /*********** THEMING ************/
+
+  body {
+    --clr-primary: hsl(var(--clr-400));
+    --clr-accent: hsl(var(--clr-300));
+    --bg-primary: hsl(var(--clr-200));
+    --bg-accent: hsl(var(--clr-100));
+    --shadow: 0 0.1rem 0.6rem rgb(0 0 0 / 10%);
+  }
+
+  [class*='theme-'] {
+    background: var(--bg-primary);
+    color: var(--clr-primary);
+  }
+
+  .theme-dark {
+    --clr-primary: hsl(var(--clr-100));
+    --clr-accent: hsl(var(--clr-200));
+    --bg-primary: hsl(var(--clr-500));
+    --bg-accent: hsl(var(--clr-600));
+  }
+
+  .theme-light {
+    --clr-primary: hsl(var(--clr-400));
+    --clr-accent: hsl(var(--clr-300));
+    --bg-primary: hsl(var(--clr-200));
+    --bg-accent: hsl(var(--clr-100));
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      --clr-primary: hsl(var(--clr-100));
+      --clr-accent: hsl(var(--clr-200));
+      --bg-primary: hsl(var(--clr-500));
+      --bg-accent: hsl(var(--clr-600));
+    }
+
+    .theme-dark {
+      --clr-primary: hsl(var(--clr-100));
+      --clr-accent: hsl(var(--clr-200));
+      --bg-primary: hsl(var(--clr-500));
+      --bg-accent: hsl(var(--clr-600));
+    }
+
+    .theme-light {
+      --clr-primary: hsl(var(--clr-400));
+      --clr-accent: hsl(var(--clr-300));
+      --bg-primary: hsl(var(--clr-200));
+      --bg-accent: hsl(var(--clr-100));
+    }
+  }
+
   /* Set core body defaults */
   body {
     min-height: 100vh;
-    color: hsl(var(--clr-100));
-    background-color: hsl(var(--clr-800));
+    color: var(--clr-primary);
+    background-color: var(--bg-primary);
     font-family: var(--ff-primary);
     font-size: var(--fs-300);
     line-height: 1.5;
@@ -111,11 +182,16 @@ const basicStyles = css`
     color: inherit;
   }
 
-  /* Inherit fonts for inputs and buttons */
+  /* Inherit fonts for form controls */
   button,
   input,
   select,
   textarea {
+    font: inherit;
+  }
+
+  ::placeholder {
+    color: inherit;
     font: inherit;
   }
 
@@ -133,34 +209,6 @@ const basicStyles = css`
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
-  }
-
-  /* TYPOGRAPHY */
-  .fs-800 {
-    font-size: var(--fs-800);
-  }
-  .fs-700 {
-    font-size: var(--fs-700);
-  }
-  .fs-600 {
-    font-size: var(--fs-600);
-  }
-  .fs-500 {
-    font-size: var(--fs-500);
-  }
-  .fs-400 {
-    font-size: var(--fs-400);
-  }
-  .fs-300 {
-    font-size: var(--fs-300);
-  }
-  .fs-200 {
-    font-size: var(--fs-200);
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
   }
 
   // screen reader only
