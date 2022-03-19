@@ -1,26 +1,25 @@
 import { Route, Routes } from 'react-router-dom';
-import {
-  Layout
-} from './components';
-import './index.css';
-import { Missing } from './pages';
-
-enum ROLES {
-  User = 2001,
-  Editor = 1984,
-  Admin = 5150,
-}
+import { Layout } from './components';
+import { GlobalStyle } from './globals';
+import { Home, Missing } from './pages';
+import { Country } from './views';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
 
+          <Route path="countries">
+            <Route path=":countryId" element={<Country />} />
+          </Route>
 
-        {/* 404 route */}
-        <Route path="*" element={<Missing />} />
-      </Route>
-    </Routes>
+          <Route path="*" element={<Missing />} />
+        </Route>
+      </Routes>
+      <GlobalStyle />
+    </>
   );
 }
 
