@@ -87,6 +87,7 @@ const basicStyles = css`
     --clr-accent: hsl(var(--clr-300));
     --bg-primary: hsl(var(--clr-200));
     --bg-accent: hsl(var(--clr-100));
+    --shadow: 0 0.1rem 0.6rem rgb(0 0 0 / 10%);
   }
 
   [class*='theme-'] {
@@ -181,11 +182,16 @@ const basicStyles = css`
     color: inherit;
   }
 
-  /* Inherit fonts for inputs and buttons */
+  /* Inherit fonts for form controls */
   button,
   input,
   select,
   textarea {
+    font: inherit;
+  }
+
+  ::placeholder {
+    color: inherit;
     font: inherit;
   }
 

@@ -1,5 +1,11 @@
+import { SearchForm } from '~src/components';
+
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <SearchForm />
+    </>
+  );
 };
 
 export { Home };
