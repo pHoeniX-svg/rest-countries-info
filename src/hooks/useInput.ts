@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import { useLocalStorage } from '~src/hooks';
+import { useLocalStorage } from './useLocalStorage';
 
 type HookReturnType<T> = [
   T,

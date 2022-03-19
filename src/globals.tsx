@@ -37,6 +37,21 @@ const basicStyles = css`
     --max-width: 128rem;
   }
 
+  // mitigates the flashing of styles on DOM paint
+  [color-scheme='dark'] {
+    --clr-primary: hsl(var(--clr-100));
+    --clr-accent: hsl(var(--clr-200));
+    --bg-primary: hsl(var(--clr-500));
+    --bg-accent: hsl(var(--clr-600));
+  }
+
+  [color-scheme='light'] {
+    --clr-primary: hsl(var(--clr-400));
+    --clr-accent: hsl(var(--clr-300));
+    --bg-primary: hsl(var(--clr-200));
+    --bg-accent: hsl(var(--clr-100));
+  }
+
   /* Set core root defaults */
   html {
     box-sizing: border-box;
@@ -65,25 +80,14 @@ const basicStyles = css`
     box-sizing: inherit;
   }
 
-  /* Set core body defaults */
+  /*********** THEMING ************/
+
   body {
     --clr-primary: hsl(var(--clr-400));
     --clr-accent: hsl(var(--clr-300));
     --bg-primary: hsl(var(--clr-200));
     --bg-accent: hsl(var(--clr-100));
-
-    min-height: 100vh;
-    color: var(--clr-primary);
-    background-color: var(--bg-primary);
-    font-family: var(--ff-primary);
-    font-size: var(--fs-300);
-    line-height: 1.5;
-    text-rendering: optimizeSpeed;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-
-  /*********** THEMING ************/
 
   [class*='theme-'] {
     background: var(--bg-primary);
@@ -105,6 +109,13 @@ const basicStyles = css`
   }
 
   @media (prefers-color-scheme: dark) {
+    body {
+      --clr-primary: hsl(var(--clr-100));
+      --clr-accent: hsl(var(--clr-200));
+      --bg-primary: hsl(var(--clr-500));
+      --bg-accent: hsl(var(--clr-600));
+    }
+
     .theme-dark {
       --clr-primary: hsl(var(--clr-100));
       --clr-accent: hsl(var(--clr-200));
@@ -118,6 +129,19 @@ const basicStyles = css`
       --bg-primary: hsl(var(--clr-200));
       --bg-accent: hsl(var(--clr-100));
     }
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    color: var(--clr-primary);
+    background-color: var(--bg-primary);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-300);
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /*********** SCROLLBARS: DISABLED ************/

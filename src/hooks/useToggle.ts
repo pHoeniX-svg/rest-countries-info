@@ -1,4 +1,4 @@
-import { useLocalStorage } from '.';
+import { useLocalStorage } from './useLocalStorage';
 
 type HookReturnType<T> = [boolean | T, (value?: boolean | T) => void];
 
