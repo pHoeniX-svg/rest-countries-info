@@ -7,12 +7,12 @@ function useCountries() {
     throw new Error(`useCountries must be used within a CountriesProvider`);
   }
 
-  const { countries, setCountries } = context;
+  const { error, loading, countries, setCountries } = context;
   useDebugValue(countries, (countries) =>
-    countries.length ? 'Countries Fetched' : 'No Countries To Show'
+    countries?.length ? 'Countries Fetched' : 'No Countries To Show'
   );
 
-  return { countries, setCountries };
+  return { error, loading, countries, setCountries };
 }
 
 export { useCountries };

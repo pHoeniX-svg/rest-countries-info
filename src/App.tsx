@@ -12,7 +12,7 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="countries">
-            <Route path=":countryId" element={<Country />} />
+            <Route path=":countryName" element={<Country />} />
           </Route>
 
           <Route path="*" element={<Missing />} />

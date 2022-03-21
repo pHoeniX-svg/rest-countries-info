@@ -1,5 +1,5 @@
 type TextOwnProps<E extends React.ElementType> = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   element?: E;
 };
 
@@ -11,6 +11,7 @@ const Text = <E extends React.ElementType = 'span'>({
   element,
 }: TextProps<E>) => {
   const Element = element || 'span';
+  // return children ? <Element>{children}</Element> : <Element />;
   return <Element>{children}</Element>;
 };
 

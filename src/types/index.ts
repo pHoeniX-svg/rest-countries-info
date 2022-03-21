@@ -2,7 +2,7 @@ export type FormEventType = React.FormEvent<HTMLFormElement>;
 
 export type InputEventType = React.ChangeEvent<HTMLInputElement>;
 
-export interface Country {
+export interface ICountry {
   alpha2Code: string;
   alpha3Code: string;
   altSpellings: string[];

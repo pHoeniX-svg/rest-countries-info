@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Container, Image, Text, Title } from './style';
+import { Body, Container, Image, Text, Title } from './style';
 
 type Props = {
   children: ReactNode;
@@ -13,6 +13,10 @@ type ImgProps = {
 
 const Card = ({ children, ...restProps }: Props) => {
   return <Container {...restProps}>{children}</Container>;
+};
+
+Card.Body = function CardBody({ children, ...restProps }: Props) {
+  return <Body {...restProps}>{children}</Body>;
 };
 
 Card.Title = function CardTitle({ children, ...restProps }: Props) {

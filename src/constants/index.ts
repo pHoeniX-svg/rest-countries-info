@@ -1,6 +1,6 @@
 /* API ROUTES */
 
-const BASE_URL = 'https://restcountries.com/v2';
+const BASE_URL = 'https://restcountries.com/v2/';
 
 const API_ROUTES = {
   ALL: `all`,
