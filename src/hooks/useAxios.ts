@@ -20,7 +20,7 @@ type TConfig = {
   requestConfig?: AxiosRequestConfig;
 };
 
-const useAxiosFunction = <T>(): HookReturnType<T> => {
+const useAxios = <T>(): HookReturnType<T> => {
   const [response, setResponse] = useState<T>([] as unknown as T);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -61,4 +61,4 @@ const useAxiosFunction = <T>(): HookReturnType<T> => {
   return [response, error, loading, axiosFetch];
 };
 
-export { useAxiosFunction };
+export { useAxios };

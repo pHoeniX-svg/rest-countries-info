@@ -1,9 +1,10 @@
-import { SearchForm } from '~src/components';
+import { Grid, SearchForm } from '~src/components';
 
 const Home = () => {
   return (
     <>
       <SearchForm />
+      <Grid>hello</Grid>
     </>
   );
 };
