@@ -38,11 +38,11 @@ const useAxios = <T>(): HookReturnType<T> => {
         ...requestConfig,
         signal: ctrl.signal,
       });
-      console.log(result);
-      setResponse(result.data);
+      console.log('RESPONSE', response);
+      setResponse(result?.data);
     } catch (error) {
       const e = error as AxiosError;
-      console.error(e.message);
+      console.error(e.response?.data);
       setError(e.message);
     } finally {
       setLoading(false);
@@ -50,8 +50,6 @@ const useAxios = <T>(): HookReturnType<T> => {
   };
 
   useEffect(() => {
-    console.log(controller);
-
     return () => {
       controller?.abort();
     };

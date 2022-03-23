@@ -36,13 +36,7 @@ const SearchForm = () => {
           />
         </SearchContainer>
 
-        <FilterContainer>
-          {/* <StyledSelect
-            classNamePrefix={'Select'}
-            options={options}
-            placeholder="Filter by Region"
-          /> */}
-        </FilterContainer>
+        <FilterContainer></FilterContainer>
       </GlobalContainer>
     </Container>
   );
