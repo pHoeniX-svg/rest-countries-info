@@ -1,16 +1,17 @@
 import { FaMoon } from 'react-icons/fa';
 import { GlobalContainer } from '~src/globals';
+import { Text } from '../Text';
 import { Container } from './style';
 
 const Header = () => {
   return (
     <Container>
       <GlobalContainer>
-        <h1>Where in the world?</h1>
-        <p>
+        <Text element="h1">Where in the world?</Text>
+        <Text element="p">
           {/* <FaRegMoon/> */}
-          <FaMoon /> <span>Dark Mode</span>
-        </p>
+          <FaMoon /> <Text>Dark Mode</Text>
+        </Text>
       </GlobalContainer>
     </Container>
   );

@@ -2,12 +2,7 @@ import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { GlobalContainer } from '~src/globals';
 import { InputEventType } from '~src/types';
-import {
-  Container,
-  FilterContainer,
-  SearchContainer,
-  StyledSelect,
-} from './style';
+import { Container, FilterContainer, SearchContainer } from './style';
 
 const options = [
   { value: 'africa', label: 'Africa' },
@@ -19,7 +14,6 @@ const options = [
 
 const SearchForm = () => {
   const [country, setCountry] = useState('');
-  const [countries, setCountries] = useState([]);
 
   const handleChange = (e: InputEventType) => {
     const { value } = e.target;
@@ -42,13 +36,7 @@ const SearchForm = () => {
           />
         </SearchContainer>
 
-        <FilterContainer>
-          <StyledSelect
-            classNamePrefix={'Select'}
-            options={options}
-            placeholder="Filter by Region"
-          />
-        </FilterContainer>
+        <FilterContainer></FilterContainer>
       </GlobalContainer>
     </Container>
   );

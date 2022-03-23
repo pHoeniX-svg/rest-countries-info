@@ -1,4 +1,3 @@
-import Select from 'react-select';
 import styled from 'styled-components';
 
 const Container = styled.section`
@@ -67,25 +66,6 @@ const SearchContainer = styled.form`
 
 const FilterContainer = styled.form`
   color: var(--clr-primary);
-
-  .Select__control {
-    padding-block: 0.7rem;
-    padding-inline: 1.5rem;
-    border: 0;
-    border-radius: 0.6rem;
-    background-color: var(--bg-accent);
-    box-shadow: var(--shadow);
-  }
-
-  .Select__indicator-separator {
-    width: 0;
-  }
-
-  .Select__placeholder {
-    color: var(--clr-primary);
-  }
 `;
 
-const StyledSelect = styled(Select)``;
-
-export { Container, SearchContainer, FilterContainer, StyledSelect };
+export { Container, SearchContainer, FilterContainer };
