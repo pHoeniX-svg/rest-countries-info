@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Body, Container, Image, Text, Title } from './style';
+import { Body, Container, Image, Text, Title, Wrapper } from './style';
 
 type Props = {
   children: ReactNode;
@@ -25,6 +25,10 @@ Card.Title = function CardTitle({ children, ...restProps }: Props) {
 
 Card.Text = function CardText({ children, ...restProps }: Props) {
   return <Text {...restProps}>{children}</Text>;
+};
+
+Card.ImageContainer = function CardImage({ children, ...restProps }: Props) {
+  return <Wrapper {...restProps}>{children}</Wrapper>;
 };
 
 Card.Image = function CardImage({ src, alt, ...restProps }: ImgProps) {

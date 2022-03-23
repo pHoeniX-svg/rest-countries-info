@@ -1,4 +1,5 @@
-import { Card, Grid, SearchForm } from '~src/components';
+import { Card, Grid, SearchForm, Text } from '~src/components';
+import { format } from '~src/helpers';
 import { useCountries } from '~src/hooks';
 
 const Home = () => {
@@ -11,13 +12,27 @@ const Home = () => {
       <Grid>
         {countries?.map((country) => {
           return (
-            <Card key={country.name}>
-              <Card.Image src={country.flag} alt={country.name} />
+            <Card key={country?.numericCode}>
+              <Card.ImageContainer>
+                <Card.Image src={country?.flag} alt={country?.name} />
+              </Card.ImageContainer>
               <Card.Body>
-                <Card.Title> {country.name}</Card.Title>
-                <Card.Text> {country.population}</Card.Text>
-                <Card.Text> {country.region}</Card.Text>
-                <Card.Text> {country.capital}</Card.Text>
+                <Card.Title>{country?.name}</Card.Title>
+
+                <Card.Text>
+                  <Text>Population:</Text>
+                  <Text>{format(country?.population)}</Text>
+                </Card.Text>
+
+                <Card.Text>
+                  <Text>Region:</Text>
+                  <Text>{country?.region}</Text>
+                </Card.Text>
+
+                <Card.Text>
+                  <Text>Capital:</Text>
+                  <Text>{country?.capital}</Text>
+                </Card.Text>
               </Card.Body>
             </Card>
           );

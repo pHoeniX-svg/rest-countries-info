@@ -2,14 +2,32 @@ import styled from 'styled-components';
 
 const Container = styled.article`
   border-radius: 0.5rem;
+  background: var(--bg-accent);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 `;
 
-const Body = styled.div``;
+const Body = styled.div`
+  padding: 2rem;
+  padding-bottom: 4rem;
+`;
 
-const Title = styled.h3``;
+const Title = styled.h3`
+  margin-bottom: 0.5rem;
+`;
 
-const Text = styled.p``;
+const Text = styled.p`
+  & :first-child {
+    font-weight: var(--fw-600);
+    margin-right: 1rem;
+  }
+`;
 
-const Image = styled.img``;
+const Wrapper = styled.div``;
 
-export { Container, Body, Title, Text, Image };
+const Image = styled.img`
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+`;
+
+export { Container, Body, Title, Text, Image, Wrapper };

@@ -6,8 +6,8 @@ const Container = styled.section`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 3em;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 4em;
 `;
 
 export { Container, Content };
