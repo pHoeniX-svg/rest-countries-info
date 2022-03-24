@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.header`
+  position: sticky;
+  top: 0;
   padding-block: 2rem;
   background-color: var(--bg-accent);
   box-shadow: var(--shadow);

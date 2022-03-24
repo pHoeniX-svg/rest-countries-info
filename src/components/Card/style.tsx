@@ -1,4 +1,10 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  display: block;
+  text-decoration: none;
+`;
 
 const Container = styled.article`
   border-radius: 0.5rem;
@@ -30,4 +36,4 @@ const Image = styled.img`
   aspect-ratio: 16 / 9;
 `;
 
-export { Container, Body, Title, Text, Image, Wrapper };
+export { StyledLink, Container, Body, Title, Text, Image, Wrapper };

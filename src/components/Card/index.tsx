@@ -1,18 +1,31 @@
 import { ReactNode } from 'react';
-import { Body, Container, Image, Text, Title, Wrapper } from './style';
+import {
+  Body,
+  Container,
+  Image,
+  StyledLink,
+  Text,
+  Title,
+  Wrapper,
+} from './style';
 
 type Props = {
   children: ReactNode;
   restProps?: unknown[];
 };
+type CardProps = Props & { name: string };
 type ImgProps = {
   src: string;
   alt: string;
   restProps?: unknown[];
 };
 
-const Card = ({ children, ...restProps }: Props) => {
-  return <Container {...restProps}>{children}</Container>;
+const Card = ({ children, name, ...restProps }: CardProps) => {
+  return (
+    <StyledLink to={`/countries/${name}`}>
+      <Container {...restProps}>{children}</Container>
+    </StyledLink>
+  );
 };
 
 Card.Body = function CardBody({ children, ...restProps }: Props) {

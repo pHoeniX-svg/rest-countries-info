@@ -12,7 +12,7 @@ const Home = () => {
       <Grid>
         {countries?.map((country) => {
           return (
-            <Card key={country?.numericCode}>
+            <Card key={country?.numericCode} name={country?.name}>
               <Card.ImageContainer>
                 <Card.Image src={country?.flag} alt={country?.name} />
               </Card.ImageContainer>
