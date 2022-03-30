@@ -17,12 +17,13 @@ const Container = styled.section`
 `;
 
 const Title = styled.h1`
+  margin-bottom: 4rem;
   font-size: var(--fs-800);
 `;
 
 const CountryDetails = styled.div`
   display: grid;
-  gap: var(--gap, 1rem);
+  gap: 7rem;
 
   @media (min-width: 35em) {
     grid-auto-flow: column;
